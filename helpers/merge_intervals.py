@@ -1,8 +1,11 @@
 from typing import List, Tuple
 
+from static.config import MERGE_GAP, PAD_BEFORE, PAD_AFTER
+
 def merge_intervals(intervals: List[Tuple[float, float]],
-    pad_before: float = 0.5,
-    pad_after: float = 0.8) -> List[Tuple[float, float]]:
+    merge_gap: float = MERGE_GAP,
+    pad_before: float = PAD_BEFORE,
+    pad_after: float = PAD_AFTER) -> List[Tuple[float, float]]:
 
     # Merged on raw timestamps only + MERGE_GAP (padding applied afterward, so could be still overlap in result)
     if not intervals:
@@ -15,7 +18,7 @@ def merge_intervals(intervals: List[Tuple[float, float]],
     current_start, current_end = intervals[0]
 
     for next_start, next_end in intervals[1:]:
-        if next_start <= current_end + MERGE_GAP:
+        if next_start <= current_end + merge_gap:
             current_end = max(current_end, next_end)
         else:
             merged.append((current_start, current_end))

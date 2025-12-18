@@ -1,5 +1,7 @@
 import pandas as pd
 
+from static.config import MAX_WORDS, OVERLAP_WORDS, PAUSE_THRESHOLD
+
 def add_overlap_words(span_text: list, span_overlap_words: pd.DataFrame, prepend: bool = True) -> list:
     if prepend:
         for j in range(len(span_overlap_words)):
@@ -10,9 +12,9 @@ def add_overlap_words(span_text: list, span_overlap_words: pd.DataFrame, prepend
     return span_text
 
 def build_spans(words_df: pd.DataFrame,
-    max_words: int = 20,
-    overlap_words: int = 4,
-    pause_threshold: float = 0.7) -> pd.DataFrame:
+    max_words: int = MAX_WORDS,
+    overlap_words: int = OVERLAP_WORDS,
+    pause_threshold: float = PAUSE_THRESHOLD) -> pd.DataFrame:
 
     span_df = pd.DataFrame(columns=[
         "span_id",
@@ -65,3 +67,5 @@ def build_spans(words_df: pd.DataFrame,
         span_df = pd.concat([span_df, pd.DataFrame([span_row])], ignore_index=True)
         cursor += max(effective_len - overlap_words, 1)
         span_counter += 1
+
+    return span_df
