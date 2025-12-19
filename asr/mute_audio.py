@@ -6,8 +6,7 @@ import soundfile as sf
 def mute_audio(
     audio_path: str,
     output_path: str,
-    intervals: List[Tuple[float, float]],
-) -> None:
+    intervals: List[Tuple[float, float]]) -> None:
 
     if not intervals:
         data, sr = sf.read(audio_path)
