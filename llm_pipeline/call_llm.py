@@ -1,11 +1,14 @@
 import os
 import google.generativeai as genai
 from groq import Groq
+import pandas as pd
 
+from llm_pipeline.prepare_promt import finalize_classification, prepare_classification_prompt
 from text_processing.preprocessing_span import resolve_min_label
 from abstraction.span_schema import SpanSchema
 from .prompt_llm import build_llm_prompt
 from text_processing.postprocess_enforcement import validate_llm_output, enforce_final_label
+from async_groq_call_llm import async_groq_call, run_groq_batch_concurrently, run_semaphore_groq_call
 
 def call_llm_gemini(prompt: str) -> str:
 
@@ -56,33 +59,36 @@ def classify_span_with_llm(
     has_slur: bool,
     has_targeted_insult: bool) -> dict:
 
-    ### MIN_LABEL as in severity ###
-    min_label = resolve_min_label(
-        has_excessive_profanity,
-        has_slur,
-        has_targeted_insult,
-        span_text
-    )
-
-    ### Build prompt with SpanSchema ###
-    preprocessed_span: SpanSchema = {
-        'span_text': span_text,
-        'has_excessive_profanity': has_excessive_profanity,
-        'has_slur': has_slur,
-        'has_targeted_insult': has_targeted_insult,
-        'min_allowed_label': min_label
+    row = {
+        "span_text": span_text,
+        "has_excessive_profanity": has_excessive_profanity,
+        "has_slur": has_slur,
+        "has_targeted_insult": has_targeted_insult
     }
-    
-    prompt = build_llm_prompt(preprocessed_span)
+    prompt = prepare_classification_prompt(row)
+
     #llm_out = mock_call_llm(prompt)
-    llm_out = call_llm_groq_llama(prompt)
+    llm_out = call_llm_groq_llama(prompt['prompt'])
 
-    llm_out_json = validate_llm_output(llm_out)
+    return finalize_classification(llm_out, prompt["min_label"])
 
-    final_label = enforce_final_label(
-        llm_out_json,
-        min_label
-    )
-
-    return final_label
+def batch_classify_dataframe(spans_df: pd.DataFrame) -> pd.DataFrame:
+    batch_data = []
+    for _, row in spans_df.iterrows():
+        batch_data.append(prepare_classification_prompt(row))
+    
+    prompts_only = [item["prompt"] for item in batch_data]
+    
+    raw_results = run_groq_batch_concurrently(prompts_only)
+    
+    for idx, (row_idx, _) in enumerate(spans_df.iterrows()):
+        context = batch_data[idx]
+        raw_result = raw_results[idx]
+        
+        final_result = finalize_classification(raw_result, context["min_label"])
+        
+        for k, v in final_result.items():
+            spans_df.at[row_idx, k] = v
+            
+    return spans_df
 
