@@ -2,7 +2,7 @@ import pandas as pd
 
 from asr.speech_2_span import whisperx_to_word_df
 from helpers.build_span import build_spans
-from llm_pipeline.call_llm import classify_span_with_llm
+from llm_pipeline.call_llm import batch_classify_dataframe, classify_span_with_llm
 from helpers.merge_intervals import merge_intervals
 from asr.mute_audio import mute_audio
 
@@ -72,18 +72,23 @@ def main():
     has_excessive_profanity, has_slur, has_targeted_insult = False, False, False #analyse_signals(spans_df: pd.Dataframe) -> List[bool]
 
     print("4 STEP: Classifying spans with CALL LLM")
-    for idx, row in spans_df.iterrows():
-        result = classify_span_with_llm(
-            span_text=row["span_text"],
-            has_excessive_profanity=has_excessive_profanity,
-            has_slur=has_slur,
-            has_targeted_insult=has_targeted_insult
-        )
 
-        for k, v in result.items():
-            spans_df.at[idx, k] = v
+    ### SYNC WORKING STEP###
+    # for idx, row in spans_df.iterrows():
+    #     result = classify_span_with_llm(
+    #         span_text=row["span_text"],
+    #         has_excessive_profanity=has_excessive_profanity,
+    #         has_slur=has_slur,
+    #         has_targeted_insult=has_targeted_insult
+    #     )
 
-    spans_df.to_csv("artifacts/spans_llm.csv", index=False)
+    #     for k, v in result.items():
+    #         spans_df.at[idx, k] = v
+
+    ### ASYNC IMPLEMENTATION ###
+    spans_llm_df = batch_classify_dataframe(spans_df)
+
+    spans_llm_df.to_csv("artifacts/spans_llm.csv", index=False)
 
     print("5 STEP Filtering and Extracy harmful spans")
     harmful_spans = spans_df[
