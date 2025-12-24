@@ -8,7 +8,7 @@ from text_processing.preprocessing_span import resolve_min_label
 from abstraction.span_schema import SpanSchema
 from .prompt_llm import build_llm_prompt
 from text_processing.postprocess_enforcement import validate_llm_output, enforce_final_label
-from async_groq_call_llm import async_groq_call, run_groq_batch_concurrently, run_semaphore_groq_call
+from .async_groq_call_llm import async_groq_call, run_groq_batch_concurrently, run_semaphore_groq_call
 
 def call_llm_gemini(prompt: str) -> str:
 
@@ -79,7 +79,7 @@ def batch_classify_dataframe(spans_df: pd.DataFrame) -> pd.DataFrame:
     
     prompts_only = [item["prompt"] for item in batch_data]
     
-    raw_results = run_groq_batch_concurrently(prompts_only)
+    raw_results = run_groq_batch_concurrently(prompts_only, max_concurrent=2)
     
     for idx, (row_idx, _) in enumerate(spans_df.iterrows()):
         context = batch_data[idx]

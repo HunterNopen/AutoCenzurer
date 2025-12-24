@@ -22,50 +22,21 @@ def main():
     # 6 merge_intervals() - mute_audio() ###
 
     print("1 STEP: Running ASR")
-    words_df = whisperx_to_word_df(
-        audio_path=AUDIO_PATH,
-        audio_id=AUDIO_ID
-    )
+    # words_df = whisperx_to_word_df(
+    #     audio_path=AUDIO_PATH,
+    #     audio_id=AUDIO_ID
+    # )
 
-    # dialogue = [
-    #     ("hey",          0.0, 0.4),
-    #     ("man",          0.4, 0.8),
-    #     ("what",         0.8, 1.2),
-    #     ("you",          1.2, 1.6),
-    #     ("said",         1.6, 2.0),
-    #     ("was",          2.0, 2.4),
-    #     ("really",       2.4, 2.8),
-    #     ("stupid",       2.8, 3.2),
-    #     ("and",          3.2, 3.6),
-    #     ("offensive",    3.6, 4.0),
-    #     ("please",       4.0, 4.4),
-    #     ("watch",        4.4, 4.8),
-    #     ("your",         4.8, 5.2),
-    #     ("language",     5.2, 5.6),
-    #     ("fucking",     5.2, 5.6),
-    #     ("dumbass",     5.2, 5.6),
-    #     ("kill",        5.2, 5.6),
-    #     ("yourself",     5.2, 5.6),
-    # ]
+    # words_df.to_csv(WORDS_CSV, index=False)
 
-    # rows = []
-    # for word_id, (word, start, end) in enumerate(dialogue):
-    #     rows.append({
-    #         "audio_id": AUDIO_ID,
-    #         "word_id": word_id,
-    #         "word": word,
-    #         "start_time": start,
-    #         "end_time": end,
-    #     })
-
-    # words_df = pd.DataFrame(rows)
-    words_df.to_csv(WORDS_CSV, index=False)
+    # words_df = pd.read_csv(WORDS_CSV)
 
     print("2 STEP: Building spans")
-    spans_df = build_spans(words_df)
+    # spans_df = build_spans(words_df)
+    # spans_df.to_csv("artifacts/spans_async.csv", index=False)
 
-    spans_df.to_csv(SPANS_CSV, index=False)
-    # spans_df = pd.read_csv(SPANS_CSV)
+    spans_df = pd.read_csv(SPANS_CSV)
+
     print(f"LOG: Spans saved to {SPANS_CSV}")
 
     print("3 STEP: Deterministic Signals Analysis !!!PASS MOCK!!!")
@@ -88,7 +59,7 @@ def main():
     ### ASYNC IMPLEMENTATION ###
     spans_llm_df = batch_classify_dataframe(spans_df)
 
-    spans_llm_df.to_csv("artifacts/spans_llm.csv", index=False)
+    spans_llm_df.to_csv("artifacts/spans_async_llm.csv", index=False)
 
     print("5 STEP Filtering and Extracy harmful spans")
     harmful_spans = spans_df[

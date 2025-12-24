@@ -1,7 +1,7 @@
 import os
 import asyncio
 from typing import List
-from groq import AsyncGroq
+from groq import AsyncGroq, RateLimitError
 
 async def async_groq_call(prompts: List[str]) -> List[str]:
     client = AsyncGroq(
@@ -28,6 +28,10 @@ async def async_groq_call(prompts: List[str]) -> List[str]:
 
 async def semaphore_async_groq_call(client: AsyncGroq, prompt: str, semaphore: asyncio.Semaphore) -> str:
     async with semaphore:
+
+        ### Groq API Free Tier Rate Limit Handling ###
+        await asyncio.sleep(60 // (15 // 3)) ### FREE TIER: 15 requests // 3 threads PER minute ###
+
         try:
             response = await client.chat.completions.create(
                 model="llama-3.1-8b-instant",
@@ -35,17 +39,20 @@ async def semaphore_async_groq_call(client: AsyncGroq, prompt: str, semaphore: a
                 {"role": "system", "content": prompt}
             ],
             temperature=0.3,
-            max_tokens=512,
+            max_tokens=256,
             stream=False,
             response_format={"type": "json_object"}
         )
             return response.choices[0].message.content
+        except RateLimitError as e:
+            print(f"!!! HIT RATE LIMIT: {e} !!!")
+            raise e
         except Exception as e:
-            return f"Error: {e}"
+            raise f"Error: {e}"
 
 async def run_semaphore_groq_call(prompts: List[str]) -> List[str]:
     client = AsyncGroq(api_key=os.environ.get("GROQ_API_KEY"))
-    semaphore = asyncio.Semaphore(2)
+    semaphore = asyncio.Semaphore(3)
 
     tasks = [semaphore_async_groq_call(client, prompt, semaphore) for prompt in prompts]
     results = await asyncio.gather(*tasks)
@@ -54,12 +61,12 @@ async def run_semaphore_groq_call(prompts: List[str]) -> List[str]:
 
     return results
 
-async def process_groq_batch_concurrently(prompts: List[str]) -> List[str]:
-    async with AsyncGroq(api_key=os.environ.get("GROQ_API_KEY")) as client:
-        semaphore = asyncio.Semaphore(5) 
+async def process_groq_batch_concurrently(prompts: List[str], max_concurrent: int) -> List[str]:
+    async with AsyncGroq(api_key=os.environ.get("GROQ_API_KEY"), max_retries=0) as client:
+        semaphore = asyncio.Semaphore(max_concurrent) 
         tasks = [semaphore_async_groq_call(client, p, semaphore) for p in prompts]
 
         return await asyncio.gather(*tasks)
     
-def run_groq_batch_concurrently(prompts: List[str], max_concurrent: int = 5) -> List[str]:
+def run_groq_batch_concurrently(prompts: List[str], max_concurrent: int = 2) -> List[str]:
     return asyncio.run(process_groq_batch_concurrently(prompts, max_concurrent=max_concurrent))
