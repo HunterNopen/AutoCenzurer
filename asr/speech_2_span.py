@@ -5,7 +5,7 @@ import re
 import subprocess
 import tempfile
 from pathlib import Path
-import shutil
+import imageio_ffmpeg
 
 def normalize_word(w: str) -> str:
     pattern_cleanse = re.compile(r"^[^\w']+|[^\w']+$")
@@ -144,9 +144,10 @@ def _media_to_audio_path(media_path: str) -> tuple[str, tempfile.TemporaryDirect
     if path.suffix.lower() not in {".mp4", ".mkv", ".mov", ".avi"}:
         return str(path), None
 
-    ffmpeg_exe = shutil.which("ffmpeg")
-    if not ffmpeg_exe:
-        raise FileNotFoundError("NO ffmpeg")
+    #ffmpeg_exe = shutil.which("ffmpeg")
+    # if not ffmpeg_exe:
+    #     raise FileNotFoundError("NO ffmpeg")
+    ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
 
     tmpdir = tempfile.TemporaryDirectory()
     wav_path = Path(tmpdir.name) / "extracted.wav"

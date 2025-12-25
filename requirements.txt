@@ -9,7 +9,10 @@ groq>=0.4.0
 # torch>=2.0.0
 # torchaudio>=2.0.0
 
-# Must be installed separately for any specific platform
+# NOT must / OPTIONAL be installed separately for any specific platform
 # - ffmpeg (will be deleted and replaced, once I figure out easier way to extract audio :/) 
+
+### Bundle Lib for ffmpeg usage
+imageio-ffmpeg
 
 # .env file REQUIRED for LLM API usage
