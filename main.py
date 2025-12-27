@@ -2,7 +2,7 @@ import pandas as pd
 
 from asr.speech_2_span import whisperx_to_word_df
 from helpers.build_span import build_spans
-from llm_pipeline.call_llm import batch_classify_dataframe, classify_span_with_llm
+from llm_pipeline.call_llm import batch_classify_async_llm, span_classify_llm
 from helpers.merge_intervals import merge_intervals
 from asr.mute_audio import mute_audio
 
@@ -57,7 +57,7 @@ def main():
     #         spans_df.at[idx, k] = v
 
     ### ASYNC IMPLEMENTATION ###
-    spans_llm_df = batch_classify_dataframe(spans_df)
+    spans_llm_df = batch_classify_async_llm(spans_df)
 
     spans_llm_df.to_csv("artifacts/spans_async_llm.csv", index=False)
 

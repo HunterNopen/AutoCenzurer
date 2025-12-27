@@ -3,7 +3,6 @@ from llm_pipeline.prompt_llm import build_llm_prompt
 from text_processing.postprocess_enforcement import enforce_final_label, validate_llm_output
 from text_processing.preprocessing_span import resolve_min_label
 
-
 def prepare_classification_prompt(row) -> dict:
     span_text = row["span_text"]
     
