@@ -26,3 +26,39 @@ def has_targeted_insult(span: str):
                 hits.append(t)
 
     return len(hits) > 0, hits
+
+VIOLENCE_VERBS = {"kill", "murder", "hurt", "harm", "attack", "shoot", "stab", "punch", "beat", "destroy", "rape"}
+THREAT_VERBS = {"will", "gonna", "going", "should", "hope", "wish", "want"}
+THREAT_MODALS = {"should", "would", "could", "might"}
+VIOLENT_OUTCOMES = {"die", "dead", "death", "blood", "pain", "suffer", "suffering"}
+
+def has_threat_or_violence(span: str, window_size: int = 4):
+
+    tokens = normalize(span)
+    hits = []
+    
+    for i, token in enumerate(tokens):
+        if token in VIOLENCE_VERBS:
+            window_before = tokens[max(0, i-window_size):i]
+            window_after = tokens[i+1:min(len(tokens), i+window_size+1)]
+            window = window_before + window_after
+            
+            if any(w in TARGETS for w in window):
+                hits.append(f"targeted_{token}")
+            else:
+                hits.append(token)
+        
+        if token in THREAT_VERBS:
+            window_after = tokens[i+1:min(len(tokens), i+window_size+1)]
+            if any(w in VIOLENCE_VERBS for w in window_after):
+                hits.append(f"threat_{token}")
+        
+        if token in {"hope", "wish", "want"}:
+            window_after = tokens[i+1:min(len(tokens), i+window_size+1)]
+            has_target = any(w in TARGETS for w in window_after)
+            has_violence = any(w in VIOLENT_OUTCOMES | VIOLENCE_VERBS for w in window_after)
+            
+            if has_target and has_violence:
+                hits.append(f"violent_wish_{token}")
+    
+    return len(hits) > 0, hits
