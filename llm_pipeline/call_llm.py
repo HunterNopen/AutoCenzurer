@@ -1,5 +1,5 @@
 import os
-import google.generativeai as genai
+from google import genai
 from groq import Groq
 import pandas as pd
 
@@ -11,17 +11,25 @@ from text_processing.postprocess_enforcement import validate_llm_output, enforce
 from .async_groq_call_llm import async_groq_call, run_groq_batch_concurrently, run_semaphore_groq_call
 from signals_deterministic.determine_span_signals import analyze_span
 
+client = genai.Client()
+
 def call_llm_gemini(prompt: str) -> str:
 
-    key = os.getenv("GOOGLE_API_KEY")
-    genai.configure(api_key=key)
-    model = genai.GenerativeModel('gemini-2.5-flash')
-
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model='gemini-2.0-flash-lite',
+            contents=prompt,
+            config=genai.types.GenerateContentConfig(
+                temperature=0.2,
+                top_p=0.95,
+                top_k=20,
+                max_output_tokens=256,
+            ),
+        )  
         return response.text
     except Exception as e:
-        return f"Error: {e}"
+        print(f"LLM Call Failed: {e}")
+        raise
     
 def call_llm_groq_llama(prompt: str) -> str:
 
@@ -75,14 +83,13 @@ def span_classify_llm(
 
 def batch_classify_async_llm(spans_df: pd.DataFrame) -> pd.DataFrame:
 
-    batch_data = []
-    for row_idx, row in spans_df.iterrows():
-        signals = analyze_span(row["span_text"])
-        for signal_key, signal_value in signals.items():
-            spans_df.at[row_idx, signal_key] = signal_value
-        row.update(signals)
+    signals_df = spans_df['span_text'].apply(lambda row: pd.Series(analyze_span(row)))
+    spans_df[signals_df.columns] = signals_df
 
-        batch_data.append(prepare_classification_prompt(row))
+    min_label_df = spans_df.apply(lambda row: resolve_min_label(row['has_excessive_profanity'], row['has_slur'], row['has_targeted_insult'], row['has_threat_or_violence']), axis=1)
+    spans_df['min_allowed_label'] = min_label_df
+
+    batch_data = spans_df.apply(lambda row: prepare_classification_prompt(row), axis=1).tolist()
 
     spans_df.to_csv("artifacts/spans.csv", index=False)
     
