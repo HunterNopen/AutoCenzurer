@@ -5,18 +5,25 @@ def max_label(llm_label: str, min_allowed_label: str) -> str:
     return max(llm_label, min_allowed_label, key=lambda l: LABEL_ORDER[l])
 
 def resolve_min_label(
-    has_excessive_profanity: bool,
-    has_slur: bool,
-    has_targeted_insult: bool,
-    span_text: str) -> str:
+        has_excessive_profanity: bool,
+        has_slur: bool,
+        has_targeted_insult: bool,
+        explicit_violence: bool = False,
+        mass_harm_endorsement: bool = False
+    ) -> str:
 
-    violence_keywords = ["kill", "shoot", "burn", "stab", "bomb"] ### MOCKED STUPID
+    min_label = "NONE"
 
-    if any(k in span_text.lower() for k in violence_keywords):
-        return "HARASSMENT_OBSCENITY"
+    if has_targeted_insult or has_slur or (
+        has_excessive_profanity
+    ):
+        min_label = "HATE_SPEECH_GENERAL"
 
-    if has_slur or has_targeted_insult:
-        return "HATE_SPEECH_GENERAL"
+    if mass_harm_endorsement:
+        min_label = "EXTREMISM_PROMOTION"
 
-    return "NONE"
+    if explicit_violence:
+        min_label = "HARASSMENT_OBSCENITY"
+
+    return min_label
 

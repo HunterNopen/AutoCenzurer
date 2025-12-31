@@ -7,10 +7,10 @@ def prepare_classification_prompt(row) -> dict:
     span_text = row["span_text"]
     
     min_label = resolve_min_label(
-        row["has_excessive_profanity"],
-        row["has_slur"],
-        row["has_targeted_insult"],
-        span_text
+        has_excessive_profanity=row["has_excessive_profanity"],
+        has_slur=row["has_slur"],
+        has_targeted_insult=row["has_targeted_insult"],
+        explicit_violence=row["has_threat_or_violence"]
     )
 
     preprocessed_span: SpanSchema = {
