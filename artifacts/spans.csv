@@ -1,219 +1,219 @@
-span_id,span_text,start_time,end_time,has_excessive_profanity,has_slur,has_targeted_insult,profanity_hits,slur_hits,insult_hits,llm_label,llm_confidence,llm_rationale,final_enforced_label
-0,i simply must get through sorry you're much too big,0.824,4.33,False,False,False,[],[],[],,,,
-1,sorry through you're much too big yeah man bobby two,2.066,6.354,False,False,False,[],[],[],,,,
-2,big too yeah man bobby two,3.469,6.354,False,False,False,[],[],[],,,,
-3,yeah big man bobby two,3.549,6.354,False,False,False,[],[],[],,,,
-4,man yeah bobby two pistols in his bitch yeah man fuck all,4.35,9.219,True,False,False,"['bitch', 'fuck']",[],[],,,,
-5,bitch his yeah man fuck all,7.095,9.219,True,False,False,"['bitch', 'fuck']",[],[],,,,
-6,yeah bitch man fuck all,7.176,9.219,True,False,False,"['bitch', 'fuck']",[],[],,,,
-7,man yeah fuck all those niggers man martin luther,7.396,11.243,False,False,False,['fuck'],[],[],,,,
-8,those all niggers man martin luther,9.099,11.243,False,False,False,[],[],[],,,,
-9,niggers those man martin luther,9.259,11.243,False,False,False,[],[],[],,,,
-10,man niggers martin luther king deserved to be killed that fucking nigger,9.48,13.607,False,True,False,[],['nigger'],[],,,,
-11,be to killed that fucking nigger just fuck,11.904,14.349,False,True,False,['fuck'],['nigger'],[],,,,
-12,that killed fucking nigger just fuck,12.385,14.349,True,True,False,['fuck'],['nigger'],[],,,,
-13,fucking that nigger just fuck,12.926,14.349,True,True,False,['fuck'],['nigger'],[],,,,
-14,nigger fucking just fuck those apart fuck those niggers man fuck all,13.066,22.943,True,True,False,"['fuck', 'fuck', 'fuck']",['nigger'],[],,,,
-15,those fuck niggers man fuck all,15.811,22.943,True,False,False,"['fuck', 'fuck']",[],[],,,,
-16,niggers those man fuck all,16.072,22.943,True,False,False,['fuck'],[],[],,,,
-17,man niggers fuck all niggas fuck all,16.332,24.63,True,False,False,"['fuck', 'fuck']",[],[],,,,
-18,fuck man all niggas fuck all,16.713,24.63,True,False,False,"['fuck', 'fuck']",[],[],,,,
-19,all fuck niggas fuck all,22.12,24.63,True,False,False,"['fuck', 'fuck']",[],[],,,,
-20,niggas all fuck all niggas fuck all,22.722,26.237,True,False,False,"['fuck', 'fuck']",[],[],,,,
-21,fuck niggas all niggas fuck all,23.024,26.237,True,False,False,"['fuck', 'fuck']",[],[],,,,
-22,all fuck niggas fuck all,23.887,26.237,True,False,False,"['fuck', 'fuck']",[],[],,,,
-23,niggas all fuck all those niggas fuck all,24.43,27.844,True,False,False,"['fuck', 'fuck']",[],[],,,,
-24,all fuck those niggas fuck all,25.614,27.844,True,False,False,"['fuck', 'fuck']",[],[],,,,
-25,those all niggas fuck all,26.117,27.844,True,False,False,['fuck'],[],[],,,,
-26,niggas those fuck all those niggas fuck all,26.277,29.571,True,False,False,"['fuck', 'fuck']",[],[],,,,
-27,all fuck those niggas fuck all,27.342,29.571,True,False,False,"['fuck', 'fuck']",[],[],,,,
-28,those all niggas fuck all,27.723,29.571,True,False,False,['fuck'],[],[],,,,
-29,niggas those fuck all those niggas fuck all,27.904,31.278,True,False,False,"['fuck', 'fuck']",[],[],,,,
-30,all fuck those niggas fuck all,29.029,31.278,True,False,False,"['fuck', 'fuck']",[],[],,,,
-31,those all niggas fuck all,29.45,31.278,True,False,False,['fuck'],[],[],,,,
-32,niggas those fuck all those niggas they wanna,29.631,35.793,False,False,False,['fuck'],[],[],,,,
-33,all fuck those niggas they wanna,31.057,35.793,True,False,False,['fuck'],[],[],,,,
-34,those all niggas they wanna,31.157,35.793,False,False,False,[],[],[],,,,
-35,niggas those they wanna rap and steal my shit because they can't,31.338,37.955,False,False,False,['shit'],[],[],,,,
-36,my steal shit because they can't get shit go and,36.294,39.677,True,False,False,"['shit', 'shit']",[],[],,,,
-37,can't they get shit go and,37.415,39.677,True,False,False,['shit'],[],[],,,,
-38,get can't shit go and,37.575,39.677,True,False,False,['shit'],[],[],,,,
-39,shit get go and get a job stop trying,38.015,41.639,False,False,False,['shit'],[],[],,,,
-40,get and a job stop trying,39.577,41.639,False,False,False,[],[],[],,,,
-41,a get job stop trying,39.777,41.639,False,False,False,[],[],[],,,,
-42,job a stop trying to rob stop trying to fuck my mom,39.977,43.941,False,False,False,['fuck'],[],[],,,,
-43,trying stop to fuck my mom my dick,42.54,44.702,True,False,False,"['fuck', 'dick']",[],[],,,,
-44,fuck to my mom my dick,43.0,44.702,True,False,False,"['fuck', 'dick']",[],[],,,,
-45,my fuck mom my dick,43.201,44.702,True,False,False,"['fuck', 'dick']",[],[],,,,
-46,mom my my dick is bigger than yards fuck all,43.421,46.884,True,False,False,"['dick', 'fuck']",[],[],,,,
-47,bigger is than yards fuck all,44.722,46.884,True,False,False,['fuck'],[],[],,,,
-48,than bigger yards fuck all,44.862,46.884,True,False,False,['fuck'],[],[],,,,
-49,yards than fuck all niggas they can,45.123,48.186,False,False,False,['fuck'],[],[],,,,
-50,fuck yards all niggas they can,45.323,48.186,True,False,False,['fuck'],[],[],,,,
-51,all fuck niggas they can,46.264,48.186,True,False,False,['fuck'],[],[],,,,
-52,niggas all they can burn in hell fuck rosa,46.724,50.388,False,False,False,['fuck'],[],[],,,,
-53,burn can in hell fuck rosa,48.126,50.388,True,False,False,['fuck'],[],[],,,,
-54,in burn hell fuck rosa,48.266,50.388,True,False,False,['fuck'],[],[],,,,
-55,hell in fuck rosa parks i'll slap that bitch as well niggas,48.546,53.391,True,False,False,"['fuck', 'bitch']",[],[],,,,
-56,that slap bitch as well niggas need,51.309,53.651,False,False,False,['bitch'],[],[],,,,
-57,bitch that as well niggas need,51.529,53.651,True,False,False,['bitch'],[],[],,,,
-58,as bitch well niggas need,51.749,53.651,True,False,False,['bitch'],[],[],,,,
-59,well as niggas need to burn niggas need,51.99,55.373,False,False,False,[],[],[],,,,
-60,need niggas to burn niggas need,53.051,55.373,False,False,False,[],[],[],,,,
-61,to need burn niggas need,53.451,55.373,False,False,False,[],[],[],,,,
-62,burn to niggas need to learn niggas can't,53.711,57.175,False,False,False,[],[],[],,,,
-63,need niggas to learn niggas can't,54.752,57.175,False,False,False,[],[],[],,,,
-64,to need learn niggas can't,55.153,57.175,False,False,False,[],[],[],,,,
-65,learn to niggas can't pass class niggas can't learn yeah fuck,55.413,67.942,False,False,False,['fuck'],[],[],,,,
-66,niggas class can't learn yeah fuck,57.675,67.942,True,False,False,['fuck'],[],[],,,,
-67,can't niggas learn yeah fuck,58.156,67.942,True,False,False,['fuck'],[],[],,,,
-68,learn can't yeah fuck all those niggas fuck all,58.556,69.844,True,False,False,"['fuck', 'fuck']",[],[],,,,
-69,all fuck those niggas fuck all,67.582,69.844,True,False,False,"['fuck', 'fuck']",[],[],,,,
-70,those all niggas fuck all,67.962,69.844,True,False,False,['fuck'],[],[],,,,
-71,niggas those fuck all those niggas fuck all,68.182,71.546,True,False,False,"['fuck', 'fuck']",[],[],,,,
-72,all fuck those niggas fuck all,69.283,71.546,True,False,False,"['fuck', 'fuck']",[],[],,,,
-73,those all niggas fuck all,69.704,71.546,True,False,False,['fuck'],[],[],,,,
-74,niggas those fuck all those niggas yeah bitch,69.884,73.828,True,False,False,"['fuck', 'bitch']",[],[],,,,
-75,all fuck those niggas yeah bitch,71.025,73.828,True,False,False,"['fuck', 'bitch']",[],[],,,,
-76,those all niggas yeah bitch,71.405,73.828,True,False,False,['bitch'],[],[],,,,
-77,niggas those yeah bitch my,71.566,74.008,True,False,False,['bitch'],[],[],,,,
-78,yeah niggas bitch my name is bobby two pistols you try,71.866,77.291,False,False,False,['bitch'],[],[],,,,
-79,bobby is two pistols you try,74.288,77.291,False,False,False,[],[],[],,,,
-80,two bobby pistols you try,74.448,77.291,False,False,False,[],[],[],,,,
-81,pistols two you try to rob me i got a pistol i'm,74.849,80.394,False,False,False,[],[],[],,,,
-82,i me got a pistol i'm shooting,77.871,80.874,False,False,False,[],[],[],,,,
-83,got i a pistol i'm shooting,78.092,80.874,False,False,False,[],[],[],,,,
-84,a got pistol i'm shooting,78.332,80.874,False,False,False,[],[],[],,,,
-85,pistol a i'm shooting a black nigger in his head again and,78.572,83.837,False,True,False,[],['nigger'],[],,,,
-86,in nigger his head again and bitch,81.355,84.197,False,True,False,['bitch'],['nigger'],[],,,,
-87,his in head again and bitch,81.795,84.197,True,False,False,['bitch'],[],[],,,,
-88,head his again and bitch,81.955,84.197,True,False,False,['bitch'],[],[],,,,
-89,again head and bitch i am not george zimmerman i'm gonna,82.256,87.22,False,False,False,['bitch'],[],[],,,,
-90,not am george zimmerman i'm gonna,84.538,87.22,False,False,False,[],[],[],,,,
-91,george not zimmerman i'm gonna,84.718,87.22,False,False,False,[],[],[],,,,
-92,zimmerman george i'm gonna kill that nigger dead kill that,85.118,89.462,False,True,False,[],['nigger'],[],,,,
-93,that kill nigger dead kill that,87.28,89.462,False,True,False,[],['nigger'],[],,,,
-94,nigger that dead kill that,87.54,89.462,False,True,False,[],['nigger'],[],,,,
-95,dead nigger kill that nigger dead record that,87.741,91.204,False,True,False,[],"['nigger', 'nigger']",[],,,,
-96,that kill nigger dead record that,89.042,91.204,False,True,False,[],['nigger'],[],,,,
-97,nigger that dead record that,89.322,91.204,False,True,False,[],['nigger'],[],,,,
-98,dead nigger record that shit and put it on worldstar as well,89.522,93.686,False,True,False,['shit'],['nigger'],[],,,,
-99,it put on worldstar as well fuck all,91.644,94.827,False,False,False,['fuck'],[],[],,,,
-100,worldstar on as well fuck all,92.205,94.827,True,False,False,['fuck'],[],[],,,,
-101,as worldstar well fuck all,92.425,94.827,True,False,False,['fuck'],[],[],,,,
-102,well as fuck all those niggas they can burn in hell fuck,93.286,97.931,True,False,False,"['fuck', 'fuck']",[],[],,,,
-103,can they burn in hell fuck eric,95.648,98.331,False,False,False,['fuck'],[],[],,,,
-104,burn can in hell fuck eric,96.169,98.331,True,False,False,['fuck'],[],[],,,,
-105,in burn hell fuck eric,96.309,98.331,True,False,False,['fuck'],[],[],,,,
-106,hell in fuck eric garner he fat as fucking hell fuck all,96.589,101.555,True,False,False,"['fuck', 'fuck']",[],[],,,,
-107,as fat fucking hell fuck all,99.273,101.555,True,False,False,['fuck'],[],[],,,,
-108,fucking as hell fuck all,99.633,101.555,True,False,False,['fuck'],[],[],,,,
-109,hell fucking fuck all those niggas i'll choke them out fuck all,99.693,104.98,True,False,False,"['fuck', 'fuck']",[],[],,,,
-110,choke i'll them out fuck all,102.397,104.98,True,False,False,['fuck'],[],[],,,,
-111,them choke out fuck all,102.657,104.98,True,False,False,['fuck'],[],[],,,,
-112,out them fuck all those niggas i'll shoot it out if a,102.937,107.863,False,False,False,['fuck'],[],[],,,,
-113,shoot i'll it out if a,105.841,107.863,False,False,False,[],[],[],,,,
-114,it shoot out if a,106.101,107.863,False,False,False,[],[],[],,,,
-115,out it if a nigger gets mad then we can shoot it,106.402,109.906,False,True,False,[],['nigger'],[],,,,
-116,then mad we can shoot it out bitch i,108.745,111.228,False,False,False,['bitch'],[],[],,,,
-117,shoot can it out bitch i,109.485,111.228,True,False,False,['bitch'],[],[],,,,
-118,it shoot out bitch i,109.606,111.228,True,False,False,['bitch'],[],[],,,,
-119,out it bitch i don't fight with niggers they'll beat me down,109.866,113.671,False,False,False,['bitch'],[],[],,,,
-120,niggers with they'll beat me down they is,111.929,114.672,False,False,False,[],[],[],,,,
-121,beat they'll me down they is,112.589,114.672,False,False,False,[],[],[],,,,
-122,me beat down they is,112.97,114.672,False,False,False,[],[],[],,,,
-123,down me they is like the junk like to,113.41,117.203,False,False,False,[],[],[],,,,
-124,like is the junk like to,114.632,117.203,False,False,False,[],[],[],,,,
-125,the like junk like to,114.732,117.203,False,False,False,[],[],[],,,,
-126,junk the like to take a nigga car and rap at the,115.173,119.368,False,False,False,[],[],[],,,,
-127,car nigga and rap at the same time stupid ass,117.804,121.553,False,False,False,[],[],[],,,,
-128,the at same time stupid ass,118.887,121.553,False,False,False,[],[],[],,,,
-129,same the time stupid ass,119.248,121.553,False,False,False,[],[],[],,,,
-130,time same stupid ass niggas,119.428,121.974,False,False,False,[],[],[],,,,
-131,stupid time ass niggas all they can do is rhyme they can,119.849,124.52,False,False,False,[],[],[],,,,
-132,do can is rhyme they can,122.655,124.52,False,False,False,[],[],[],,,,
-133,is do rhyme they can,122.836,124.52,False,False,False,[],[],[],,,,
-134,rhyme is they can never get a motherfuckin' 9 to 5 stupid,123.076,128.028,False,False,False,[],[],[],,,,
-135,motherfuckin' a 9 to 5 stupid ass niggas don't know 5 plus,125.301,130.092,False,False,False,[],[],[],,,,
-136,niggas ass don't know 5 plus 5 they just,128.208,131.375,False,False,False,[],[],[],,,,
-137,5 know plus 5 they just,129.311,131.375,False,False,False,[],[],[],,,,
-138,plus 5 5 they just,129.571,131.375,False,False,False,[],[],[],,,,
-139,5 plus they just know that if i can do a rhyme,129.972,133.039,False,False,False,[],[],[],,,,
-140,i if can do a rhyme i can get time yeah fuck,131.937,135.725,False,False,False,['fuck'],[],[],,,,
-141,can i get time yeah fuck all those niggas fuck all,133.059,137.569,True,False,False,"['fuck', 'fuck']",[],[],,,,
-142,all fuck those niggas fuck all,135.424,137.569,True,False,False,"['fuck', 'fuck']",[],[],,,,
-143,those all niggas fuck all,135.745,137.569,True,False,False,['fuck'],[],[],,,,
-144,niggas those fuck all those niggas fuck all,135.905,139.292,True,False,False,"['fuck', 'fuck']",[],[],,,,
-145,all fuck those niggas fuck all,137.048,139.292,True,False,False,"['fuck', 'fuck']",[],[],,,,
-146,those all niggas fuck all,137.509,139.292,True,False,False,['fuck'],[],[],,,,
-147,niggas those fuck all those niggas fuck all,137.609,140.976,True,False,False,"['fuck', 'fuck']",[],[],,,,
-148,all fuck those niggas fuck all,138.771,140.976,True,False,False,"['fuck', 'fuck']",[],[],,,,
-149,those all niggas fuck all,139.152,140.976,True,False,False,['fuck'],[],[],,,,
-150,niggas those fuck all those niggas yeah fuck all those niggas fuck,139.332,144.262,True,False,False,"['fuck', 'fuck', 'fuck']",[],[],,,,
-151,fuck yeah all those niggas fuck all,141.737,144.423,True,False,False,"['fuck', 'fuck']",[],[],,,,
-152,all fuck those niggas fuck all,142.178,144.423,True,False,False,"['fuck', 'fuck']",[],[],,,,
-153,those all niggas fuck all,142.519,144.423,True,False,False,['fuck'],[],[],,,,
-154,niggas those fuck all those niggas fuck all,142.699,146.146,True,False,False,"['fuck', 'fuck']",[],[],,,,
-155,all fuck those niggas fuck all,143.902,146.146,True,False,False,"['fuck', 'fuck']",[],[],,,,
-156,those all niggas fuck all,144.283,146.146,True,False,False,['fuck'],[],[],,,,
-157,niggas those fuck all those niggas yeah fuck all those niggas niggas,144.483,149.313,True,False,False,"['fuck', 'fuck']",[],[],,,,
-158,fuck yeah all those niggas niggas can,146.888,149.453,False,False,False,['fuck'],[],[],,,,
-159,all fuck those niggas niggas can,147.329,149.453,True,False,False,['fuck'],[],[],,,,
-160,those all niggas niggas can,147.69,149.453,False,False,False,[],[],[],,,,
-161,niggas those niggas can burn in hell trayvon as,147.87,151.497,False,False,False,[],[],[],,,,
-162,burn can in hell trayvon as,149.333,151.497,False,False,False,[],[],[],,,,
-163,in burn hell trayvon as,149.493,151.497,False,False,False,[],[],[],,,,
-164,hell in trayvon as well niggas can,149.774,152.88,False,False,False,[],[],[],,,,
-165,trayvon hell as well niggas can,149.894,152.88,False,False,False,[],[],[],,,,
-166,as trayvon well niggas can,150.756,152.88,False,False,False,[],[],[],,,,
-167,well as niggas can burn in hell niggas burn,151.437,154.744,False,False,False,[],[],[],,,,
-168,burn can in hell niggas burn,152.78,154.744,False,False,False,[],[],[],,,,
-169,in burn hell niggas burn,152.9,154.744,False,False,False,[],[],[],,,,
-170,hell in niggas burn all the,153.241,167.817,False,False,False,[],[],[],,,,
-171,niggas hell burn all the,153.361,167.817,False,False,False,[],[],[],,,,
-172,burn niggas all the niggers in this bitch you motherfuckers used to,154.243,171.722,False,False,False,['bitch'],[],[],,,,
-173,bitch this you motherfuckers used to be slaves now you,168.778,173.445,False,False,False,['bitch'],[],[],,,,
-174,to used be slaves now you,171.422,173.445,False,False,False,[],[],[],,,,
-175,be to slaves now you,171.622,173.445,False,False,False,[],[],[],,,,
-176,slaves be now you think you can ride in my escalade stupid,171.802,176.849,False,False,False,[],[],[],,,,
-177,ride can in my escalade stupid ass,174.146,177.21,False,False,False,[],[],[],,,,
-178,in ride my escalade stupid ass,174.346,177.21,False,False,False,[],[],[],,,,
-179,my in escalade stupid ass,174.726,177.21,False,False,False,[],[],[],,,,
-180,escalade my stupid ass nigger better clean my car good before i,174.967,180.234,False,True,False,[],['nigger'],[],,,,
-181,my clean car good before i,178.071,180.234,False,False,False,[],[],[],,,,
-182,car my good before i,178.351,180.234,False,False,False,[],[],[],,,,
-183,good car before i get this whip out and then shoot you,178.532,182.036,False,False,False,[],[],[],,,,
-184,out whip and then shoot you in your hood dumbass nigger stupid,180.735,185.361,False,True,True,[],['nigger'],['dumbass'],,,,
-185,your in hood dumbass nigger stupid ass,182.057,185.601,False,True,True,[],['nigger'],['dumbass'],,,,
-186,hood your dumbass nigger stupid ass,182.177,185.601,False,True,True,[],['nigger'],"['dumbass', 'stupid']",,,,
-187,dumbass hood nigger stupid ass,182.437,185.601,False,True,False,[],['nigger'],[],,,,
-188,nigger dumbass stupid ass nigger you calling me a cracker well it's,182.798,188.425,False,True,False,[],"['nigger', 'nigger']",[],,,,
-189,me calling a cracker well it's,186.763,188.425,False,False,False,[],[],[],,,,
-190,a me cracker well it's,187.104,188.425,False,False,False,[],[],[],,,,
-191,cracker a well it's better to be a nigger better than,187.264,190.889,False,True,False,[],['nigger'],[],,,,
-192,be to a nigger better than,188.706,190.889,False,True,False,[],['nigger'],[],,,,
-193,a be nigger better than,188.826,190.889,False,True,False,[],['nigger'],[],,,,
-194,nigger a better than being a nigger bitch you're,188.966,194.213,False,True,False,['bitch'],"['nigger', 'nigger']",[],,,,
-195,being than a nigger bitch you're,190.568,194.213,True,True,False,['bitch'],['nigger'],[],,,,
-196,a being nigger bitch you're,191.049,194.213,True,True,False,['bitch'],['nigger'],[],,,,
-197,nigger a bitch you're so black you look like a damn shade,191.55,196.797,False,True,False,['bitch'],['nigger'],[],,,,
-198,look you like a damn shade bitch clean,194.734,199.751,False,False,False,['bitch'],[],[],,,,
-199,a like damn shade bitch clean,195.335,199.751,True,False,False,['bitch'],[],[],,,,
-200,damn a shade bitch clean,195.635,199.751,True,False,False,['bitch'],[],[],,,,
-201,shade damn bitch clean my,195.716,199.912,True,False,False,['bitch'],[],[],,,,
-202,bitch shade clean my car while i drink lemonade you fucking,196.116,203.365,False,False,False,['bitch'],[],[],,,,
-203,i while drink lemonade you fucking,200.313,203.365,False,False,False,[],[],[],,,,
-204,drink i lemonade you fucking,200.755,203.365,False,False,False,[],[],[],,,,
-205,lemonade drink you fucking slave bobby 2,200.855,206.055,False,False,False,[],[],[],,,,
-206,you lemonade fucking slave bobby 2,201.257,206.055,False,False,False,[],[],[],,,,
-207,fucking you slave bobby 2,202.823,206.055,False,False,False,[],[],[],,,,
-208,slave fucking bobby 2 pistols man fuck all,203.024,207.722,False,False,False,['fuck'],[],[],,,,
-209,2 bobby pistols man fuck all,205.614,207.722,True,False,False,['fuck'],[],[],,,,
-210,pistols 2 man fuck all,205.915,207.722,True,False,False,['fuck'],[],[],,,,
-211,man pistols fuck all those niggas man real nigger,206.115,209.348,False,True,False,['fuck'],['nigger'],[],,,,
-212,those all niggas man real nigger,207.621,209.348,False,True,False,[],['nigger'],[],,,,
-213,niggas those man real nigger,207.742,209.348,False,True,False,[],['nigger'],[],,,,
-214,man niggas real nigger anthem,207.922,209.689,False,True,False,[],['nigger'],[],,,,
-215,real man nigger anthem,208.244,209.689,False,True,False,[],['nigger'],[],,,,
-216,nigger real anthem,208.826,209.689,False,True,False,[],['nigger'],[],,,,
-217,anthem nigger you,209.107,231.24,False,True,False,[],['nigger'],[],,,,
+span_id,span_text,start_time,end_time,has_excessive_profanity,has_slur,has_targeted_insult,has_threat_or_violence,profanity_hits,slur_hits,insult_hits,threat_or_violence_hits,min_allowed_label
+0,i simply must get through sorry you're much too big,0.824,4.33,False,False,False,False,[],[],[],[],NONE
+1,sorry through you're much too big yeah man bobby two,2.066,6.354,False,False,False,False,[],[],[],[],NONE
+2,big too yeah man bobby two,3.469,6.354,False,False,False,False,[],[],[],[],NONE
+3,yeah big man bobby two,3.549,6.354,False,False,False,False,[],[],[],[],NONE
+4,man yeah bobby two pistols in his bitch yeah man fuck all,4.35,9.219,True,False,False,False,"['bitch', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+5,bitch his yeah man fuck all,7.095,9.219,True,False,False,False,"['bitch', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+6,yeah bitch man fuck all,7.176,9.219,True,False,False,False,"['bitch', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+7,man yeah fuck all those niggers man martin luther,7.396,11.243,False,False,False,False,['fuck'],[],[],[],NONE
+8,those all niggers man martin luther,9.099,11.243,False,False,False,False,[],[],[],[],NONE
+9,niggers those man martin luther,9.259,11.243,False,False,False,False,[],[],[],[],NONE
+10,man niggers martin luther king deserved to be killed that fucking nigger,9.48,13.607,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+11,be to killed that fucking nigger just fuck,11.904,14.349,False,True,False,False,['fuck'],['nigger'],[],[],HATE_SPEECH_GENERAL
+12,that killed fucking nigger just fuck,12.385,14.349,True,True,False,False,['fuck'],['nigger'],[],[],HATE_SPEECH_GENERAL
+13,fucking that nigger just fuck,12.926,14.349,True,True,False,False,['fuck'],['nigger'],[],[],HATE_SPEECH_GENERAL
+14,nigger fucking just fuck those apart fuck those niggers man fuck all,13.066,22.943,True,True,False,False,"['fuck', 'fuck', 'fuck']",['nigger'],[],[],HATE_SPEECH_GENERAL
+15,those fuck niggers man fuck all,15.811,22.943,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+16,niggers those man fuck all,16.072,22.943,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+17,man niggers fuck all niggas fuck all,16.332,24.63,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+18,fuck man all niggas fuck all,16.713,24.63,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+19,all fuck niggas fuck all,22.12,24.63,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+20,niggas all fuck all niggas fuck all,22.722,26.237,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+21,fuck niggas all niggas fuck all,23.024,26.237,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+22,all fuck niggas fuck all,23.887,26.237,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+23,niggas all fuck all those niggas fuck all,24.43,27.844,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+24,all fuck those niggas fuck all,25.614,27.844,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+25,those all niggas fuck all,26.117,27.844,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+26,niggas those fuck all those niggas fuck all,26.277,29.571,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+27,all fuck those niggas fuck all,27.342,29.571,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+28,those all niggas fuck all,27.723,29.571,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+29,niggas those fuck all those niggas fuck all,27.904,31.278,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+30,all fuck those niggas fuck all,29.029,31.278,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+31,those all niggas fuck all,29.45,31.278,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+32,niggas those fuck all those niggas they wanna,29.631,35.793,False,False,False,False,['fuck'],[],[],[],NONE
+33,all fuck those niggas they wanna,31.057,35.793,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+34,those all niggas they wanna,31.157,35.793,False,False,False,False,[],[],[],[],NONE
+35,niggas those they wanna rap and steal my shit because they can't,31.338,37.955,False,False,False,False,['shit'],[],[],[],NONE
+36,my steal shit because they can't get shit go and,36.294,39.677,True,False,False,False,"['shit', 'shit']",[],[],[],HATE_SPEECH_GENERAL
+37,can't they get shit go and,37.415,39.677,True,False,False,False,['shit'],[],[],[],HATE_SPEECH_GENERAL
+38,get can't shit go and,37.575,39.677,True,False,False,False,['shit'],[],[],[],HATE_SPEECH_GENERAL
+39,shit get go and get a job stop trying,38.015,41.639,False,False,False,False,['shit'],[],[],[],NONE
+40,get and a job stop trying,39.577,41.639,False,False,False,False,[],[],[],[],NONE
+41,a get job stop trying,39.777,41.639,False,False,False,False,[],[],[],[],NONE
+42,job a stop trying to rob stop trying to fuck my mom,39.977,43.941,False,False,False,False,['fuck'],[],[],[],NONE
+43,trying stop to fuck my mom my dick,42.54,44.702,True,False,False,False,"['fuck', 'dick']",[],[],[],HATE_SPEECH_GENERAL
+44,fuck to my mom my dick,43.0,44.702,True,False,False,False,"['fuck', 'dick']",[],[],[],HATE_SPEECH_GENERAL
+45,my fuck mom my dick,43.201,44.702,True,False,False,False,"['fuck', 'dick']",[],[],[],HATE_SPEECH_GENERAL
+46,mom my my dick is bigger than yards fuck all,43.421,46.884,True,False,False,False,"['dick', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+47,bigger is than yards fuck all,44.722,46.884,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+48,than bigger yards fuck all,44.862,46.884,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+49,yards than fuck all niggas they can,45.123,48.186,False,False,False,False,['fuck'],[],[],[],NONE
+50,fuck yards all niggas they can,45.323,48.186,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+51,all fuck niggas they can,46.264,48.186,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+52,niggas all they can burn in hell fuck rosa,46.724,50.388,False,False,False,False,['fuck'],[],[],[],NONE
+53,burn can in hell fuck rosa,48.126,50.388,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+54,in burn hell fuck rosa,48.266,50.388,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+55,hell in fuck rosa parks i'll slap that bitch as well niggas,48.546,53.391,True,False,False,False,"['fuck', 'bitch']",[],[],[],HATE_SPEECH_GENERAL
+56,that slap bitch as well niggas need,51.309,53.651,False,False,False,False,['bitch'],[],[],[],NONE
+57,bitch that as well niggas need,51.529,53.651,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+58,as bitch well niggas need,51.749,53.651,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+59,well as niggas need to burn niggas need,51.99,55.373,False,False,False,False,[],[],[],[],NONE
+60,need niggas to burn niggas need,53.051,55.373,False,False,False,False,[],[],[],[],NONE
+61,to need burn niggas need,53.451,55.373,False,False,False,False,[],[],[],[],NONE
+62,burn to niggas need to learn niggas can't,53.711,57.175,False,False,False,False,[],[],[],[],NONE
+63,need niggas to learn niggas can't,54.752,57.175,False,False,False,False,[],[],[],[],NONE
+64,to need learn niggas can't,55.153,57.175,False,False,False,False,[],[],[],[],NONE
+65,learn to niggas can't pass class niggas can't learn yeah fuck,55.413,67.942,False,False,False,False,['fuck'],[],[],[],NONE
+66,niggas class can't learn yeah fuck,57.675,67.942,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+67,can't niggas learn yeah fuck,58.156,67.942,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+68,learn can't yeah fuck all those niggas fuck all,58.556,69.844,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+69,all fuck those niggas fuck all,67.582,69.844,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+70,those all niggas fuck all,67.962,69.844,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+71,niggas those fuck all those niggas fuck all,68.182,71.546,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+72,all fuck those niggas fuck all,69.283,71.546,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+73,those all niggas fuck all,69.704,71.546,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+74,niggas those fuck all those niggas yeah bitch,69.884,73.828,True,False,False,False,"['fuck', 'bitch']",[],[],[],HATE_SPEECH_GENERAL
+75,all fuck those niggas yeah bitch,71.025,73.828,True,False,False,False,"['fuck', 'bitch']",[],[],[],HATE_SPEECH_GENERAL
+76,those all niggas yeah bitch,71.405,73.828,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+77,niggas those yeah bitch my,71.566,74.008,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+78,yeah niggas bitch my name is bobby two pistols you try,71.866,77.291,False,False,False,False,['bitch'],[],[],[],NONE
+79,bobby is two pistols you try,74.288,77.291,False,False,False,False,[],[],[],[],NONE
+80,two bobby pistols you try,74.448,77.291,False,False,False,False,[],[],[],[],NONE
+81,pistols two you try to rob me i got a pistol i'm,74.849,80.394,False,False,False,False,[],[],[],[],NONE
+82,i me got a pistol i'm shooting,77.871,80.874,False,False,False,False,[],[],[],[],NONE
+83,got i a pistol i'm shooting,78.092,80.874,False,False,False,False,[],[],[],[],NONE
+84,a got pistol i'm shooting,78.332,80.874,False,False,False,False,[],[],[],[],NONE
+85,pistol a i'm shooting a black nigger in his head again and,78.572,83.837,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+86,in nigger his head again and bitch,81.355,84.197,False,True,False,False,['bitch'],['nigger'],[],[],HATE_SPEECH_GENERAL
+87,his in head again and bitch,81.795,84.197,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+88,head his again and bitch,81.955,84.197,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+89,again head and bitch i am not george zimmerman i'm gonna,82.256,87.22,False,False,False,False,['bitch'],[],[],[],NONE
+90,not am george zimmerman i'm gonna,84.538,87.22,False,False,False,False,[],[],[],[],NONE
+91,george not zimmerman i'm gonna,84.718,87.22,False,False,False,False,[],[],[],[],NONE
+92,zimmerman george i'm gonna kill that nigger dead kill that,85.118,89.462,False,True,False,True,[],['nigger'],[],"['threat_gonna', 'targeted_kill', 'targeted_kill']",HARASSMENT_OBSCENITY
+93,that kill nigger dead kill that,87.28,89.462,False,True,False,True,[],['nigger'],[],"['targeted_kill', 'targeted_kill']",HARASSMENT_OBSCENITY
+94,nigger that dead kill that,87.54,89.462,False,True,False,True,[],['nigger'],[],['targeted_kill'],HARASSMENT_OBSCENITY
+95,dead nigger kill that nigger dead record that,87.741,91.204,False,True,False,True,[],"['nigger', 'nigger']",[],['targeted_kill'],HARASSMENT_OBSCENITY
+96,that kill nigger dead record that,89.042,91.204,False,True,False,True,[],['nigger'],[],['targeted_kill'],HARASSMENT_OBSCENITY
+97,nigger that dead record that,89.322,91.204,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+98,dead nigger record that shit and put it on worldstar as well,89.522,93.686,False,True,False,False,['shit'],['nigger'],[],[],HATE_SPEECH_GENERAL
+99,it put on worldstar as well fuck all,91.644,94.827,False,False,False,False,['fuck'],[],[],[],NONE
+100,worldstar on as well fuck all,92.205,94.827,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+101,as worldstar well fuck all,92.425,94.827,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+102,well as fuck all those niggas they can burn in hell fuck,93.286,97.931,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+103,can they burn in hell fuck eric,95.648,98.331,False,False,False,False,['fuck'],[],[],[],NONE
+104,burn can in hell fuck eric,96.169,98.331,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+105,in burn hell fuck eric,96.309,98.331,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+106,hell in fuck eric garner he fat as fucking hell fuck all,96.589,101.555,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+107,as fat fucking hell fuck all,99.273,101.555,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+108,fucking as hell fuck all,99.633,101.555,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+109,hell fucking fuck all those niggas i'll choke them out fuck all,99.693,104.98,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+110,choke i'll them out fuck all,102.397,104.98,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+111,them choke out fuck all,102.657,104.98,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+112,out them fuck all those niggas i'll shoot it out if a,102.937,107.863,False,False,False,True,['fuck'],[],[],['shoot'],HARASSMENT_OBSCENITY
+113,shoot i'll it out if a,105.841,107.863,False,False,False,True,[],[],[],['shoot'],HARASSMENT_OBSCENITY
+114,it shoot out if a,106.101,107.863,False,False,False,True,[],[],[],['shoot'],HARASSMENT_OBSCENITY
+115,out it if a nigger gets mad then we can shoot it,106.402,109.906,False,True,False,True,[],['nigger'],[],['shoot'],HARASSMENT_OBSCENITY
+116,then mad we can shoot it out bitch i,108.745,111.228,False,False,False,True,['bitch'],[],[],['shoot'],HARASSMENT_OBSCENITY
+117,shoot can it out bitch i,109.485,111.228,True,False,False,True,['bitch'],[],[],['shoot'],HARASSMENT_OBSCENITY
+118,it shoot out bitch i,109.606,111.228,True,False,False,True,['bitch'],[],[],['shoot'],HARASSMENT_OBSCENITY
+119,out it bitch i don't fight with niggers they'll beat me down,109.866,113.671,False,False,False,True,['bitch'],[],[],['beat'],HARASSMENT_OBSCENITY
+120,niggers with they'll beat me down they is,111.929,114.672,False,False,False,True,[],[],[],['targeted_beat'],HARASSMENT_OBSCENITY
+121,beat they'll me down they is,112.589,114.672,False,False,False,True,[],[],[],['targeted_beat'],HARASSMENT_OBSCENITY
+122,me beat down they is,112.97,114.672,False,False,False,True,[],[],[],['targeted_beat'],HARASSMENT_OBSCENITY
+123,down me they is like the junk like to,113.41,117.203,False,False,False,False,[],[],[],[],NONE
+124,like is the junk like to,114.632,117.203,False,False,False,False,[],[],[],[],NONE
+125,the like junk like to,114.732,117.203,False,False,False,False,[],[],[],[],NONE
+126,junk the like to take a nigga car and rap at the,115.173,119.368,False,False,False,False,[],[],[],[],NONE
+127,car nigga and rap at the same time stupid ass,117.804,121.553,False,False,False,False,[],[],[],[],NONE
+128,the at same time stupid ass,118.887,121.553,False,False,False,False,[],[],[],[],NONE
+129,same the time stupid ass,119.248,121.553,False,False,False,False,[],[],[],[],NONE
+130,time same stupid ass niggas,119.428,121.974,False,False,False,False,[],[],[],[],NONE
+131,stupid time ass niggas all they can do is rhyme they can,119.849,124.52,False,False,False,False,[],[],[],[],NONE
+132,do can is rhyme they can,122.655,124.52,False,False,False,False,[],[],[],[],NONE
+133,is do rhyme they can,122.836,124.52,False,False,False,False,[],[],[],[],NONE
+134,rhyme is they can never get a motherfuckin' 9 to 5 stupid,123.076,128.028,False,False,False,False,[],[],[],[],NONE
+135,motherfuckin' a 9 to 5 stupid ass niggas don't know 5 plus,125.301,130.092,False,False,False,False,[],[],[],[],NONE
+136,niggas ass don't know 5 plus 5 they just,128.208,131.375,False,False,False,False,[],[],[],[],NONE
+137,5 know plus 5 they just,129.311,131.375,False,False,False,False,[],[],[],[],NONE
+138,plus 5 5 they just,129.571,131.375,False,False,False,False,[],[],[],[],NONE
+139,5 plus they just know that if i can do a rhyme,129.972,133.039,False,False,False,False,[],[],[],[],NONE
+140,i if can do a rhyme i can get time yeah fuck,131.937,135.725,False,False,False,False,['fuck'],[],[],[],NONE
+141,can i get time yeah fuck all those niggas fuck all,133.059,137.569,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+142,all fuck those niggas fuck all,135.424,137.569,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+143,those all niggas fuck all,135.745,137.569,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+144,niggas those fuck all those niggas fuck all,135.905,139.292,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+145,all fuck those niggas fuck all,137.048,139.292,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+146,those all niggas fuck all,137.509,139.292,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+147,niggas those fuck all those niggas fuck all,137.609,140.976,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+148,all fuck those niggas fuck all,138.771,140.976,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+149,those all niggas fuck all,139.152,140.976,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+150,niggas those fuck all those niggas yeah fuck all those niggas fuck,139.332,144.262,True,False,False,False,"['fuck', 'fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+151,fuck yeah all those niggas fuck all,141.737,144.423,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+152,all fuck those niggas fuck all,142.178,144.423,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+153,those all niggas fuck all,142.519,144.423,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+154,niggas those fuck all those niggas fuck all,142.699,146.146,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+155,all fuck those niggas fuck all,143.902,146.146,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+156,those all niggas fuck all,144.283,146.146,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+157,niggas those fuck all those niggas yeah fuck all those niggas niggas,144.483,149.313,True,False,False,False,"['fuck', 'fuck']",[],[],[],HATE_SPEECH_GENERAL
+158,fuck yeah all those niggas niggas can,146.888,149.453,False,False,False,False,['fuck'],[],[],[],NONE
+159,all fuck those niggas niggas can,147.329,149.453,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+160,those all niggas niggas can,147.69,149.453,False,False,False,False,[],[],[],[],NONE
+161,niggas those niggas can burn in hell trayvon as,147.87,151.497,False,False,False,False,[],[],[],[],NONE
+162,burn can in hell trayvon as,149.333,151.497,False,False,False,False,[],[],[],[],NONE
+163,in burn hell trayvon as,149.493,151.497,False,False,False,False,[],[],[],[],NONE
+164,hell in trayvon as well niggas can,149.774,152.88,False,False,False,False,[],[],[],[],NONE
+165,trayvon hell as well niggas can,149.894,152.88,False,False,False,False,[],[],[],[],NONE
+166,as trayvon well niggas can,150.756,152.88,False,False,False,False,[],[],[],[],NONE
+167,well as niggas can burn in hell niggas burn,151.437,154.744,False,False,False,False,[],[],[],[],NONE
+168,burn can in hell niggas burn,152.78,154.744,False,False,False,False,[],[],[],[],NONE
+169,in burn hell niggas burn,152.9,154.744,False,False,False,False,[],[],[],[],NONE
+170,hell in niggas burn all the,153.241,167.817,False,False,False,False,[],[],[],[],NONE
+171,niggas hell burn all the,153.361,167.817,False,False,False,False,[],[],[],[],NONE
+172,burn niggas all the niggers in this bitch you motherfuckers used to,154.243,171.722,False,False,False,False,['bitch'],[],[],[],NONE
+173,bitch this you motherfuckers used to be slaves now you,168.778,173.445,False,False,False,False,['bitch'],[],[],[],NONE
+174,to used be slaves now you,171.422,173.445,False,False,False,False,[],[],[],[],NONE
+175,be to slaves now you,171.622,173.445,False,False,False,False,[],[],[],[],NONE
+176,slaves be now you think you can ride in my escalade stupid,171.802,176.849,False,False,False,False,[],[],[],[],NONE
+177,ride can in my escalade stupid ass,174.146,177.21,False,False,False,False,[],[],[],[],NONE
+178,in ride my escalade stupid ass,174.346,177.21,False,False,False,False,[],[],[],[],NONE
+179,my in escalade stupid ass,174.726,177.21,False,False,False,False,[],[],[],[],NONE
+180,escalade my stupid ass nigger better clean my car good before i,174.967,180.234,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+181,my clean car good before i,178.071,180.234,False,False,False,False,[],[],[],[],NONE
+182,car my good before i,178.351,180.234,False,False,False,False,[],[],[],[],NONE
+183,good car before i get this whip out and then shoot you,178.532,182.036,False,False,False,True,[],[],[],['targeted_shoot'],HARASSMENT_OBSCENITY
+184,out whip and then shoot you in your hood dumbass nigger stupid,180.735,185.361,False,True,True,True,[],['nigger'],['dumbass'],['targeted_shoot'],HARASSMENT_OBSCENITY
+185,your in hood dumbass nigger stupid ass,182.057,185.601,False,True,True,False,[],['nigger'],['dumbass'],[],HATE_SPEECH_GENERAL
+186,hood your dumbass nigger stupid ass,182.177,185.601,False,True,True,False,[],['nigger'],"['dumbass', 'stupid']",[],HATE_SPEECH_GENERAL
+187,dumbass hood nigger stupid ass,182.437,185.601,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+188,nigger dumbass stupid ass nigger you calling me a cracker well it's,182.798,188.425,False,True,False,False,[],"['nigger', 'nigger']",[],[],HATE_SPEECH_GENERAL
+189,me calling a cracker well it's,186.763,188.425,False,False,False,False,[],[],[],[],NONE
+190,a me cracker well it's,187.104,188.425,False,False,False,False,[],[],[],[],NONE
+191,cracker a well it's better to be a nigger better than,187.264,190.889,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+192,be to a nigger better than,188.706,190.889,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+193,a be nigger better than,188.826,190.889,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+194,nigger a better than being a nigger bitch you're,188.966,194.213,False,True,False,False,['bitch'],"['nigger', 'nigger']",[],[],HATE_SPEECH_GENERAL
+195,being than a nigger bitch you're,190.568,194.213,True,True,False,False,['bitch'],['nigger'],[],[],HATE_SPEECH_GENERAL
+196,a being nigger bitch you're,191.049,194.213,True,True,False,False,['bitch'],['nigger'],[],[],HATE_SPEECH_GENERAL
+197,nigger a bitch you're so black you look like a damn shade,191.55,196.797,False,True,False,False,['bitch'],['nigger'],[],[],HATE_SPEECH_GENERAL
+198,look you like a damn shade bitch clean,194.734,199.751,False,False,False,False,['bitch'],[],[],[],NONE
+199,a like damn shade bitch clean,195.335,199.751,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+200,damn a shade bitch clean,195.635,199.751,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+201,shade damn bitch clean my,195.716,199.912,True,False,False,False,['bitch'],[],[],[],HATE_SPEECH_GENERAL
+202,bitch shade clean my car while i drink lemonade you fucking,196.116,203.365,False,False,False,False,['bitch'],[],[],[],NONE
+203,i while drink lemonade you fucking,200.313,203.365,False,False,False,False,[],[],[],[],NONE
+204,drink i lemonade you fucking,200.755,203.365,False,False,False,False,[],[],[],[],NONE
+205,lemonade drink you fucking slave bobby 2,200.855,206.055,False,False,False,False,[],[],[],[],NONE
+206,you lemonade fucking slave bobby 2,201.257,206.055,False,False,False,False,[],[],[],[],NONE
+207,fucking you slave bobby 2,202.823,206.055,False,False,False,False,[],[],[],[],NONE
+208,slave fucking bobby 2 pistols man fuck all,203.024,207.722,False,False,False,False,['fuck'],[],[],[],NONE
+209,2 bobby pistols man fuck all,205.614,207.722,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+210,pistols 2 man fuck all,205.915,207.722,True,False,False,False,['fuck'],[],[],[],HATE_SPEECH_GENERAL
+211,man pistols fuck all those niggas man real nigger,206.115,209.348,False,True,False,False,['fuck'],['nigger'],[],[],HATE_SPEECH_GENERAL
+212,those all niggas man real nigger,207.621,209.348,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+213,niggas those man real nigger,207.742,209.348,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+214,man niggas real nigger anthem,207.922,209.689,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+215,real man nigger anthem,208.244,209.689,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+216,nigger real anthem,208.826,209.689,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL
+217,anthem nigger you,209.107,231.24,False,True,False,False,[],['nigger'],[],[],HATE_SPEECH_GENERAL

@@ -5,27 +5,20 @@ from text_processing.preprocessing_span import resolve_min_label
 
 def prepare_classification_prompt(row) -> dict:
     span_text = row["span_text"]
-    
-    min_label = resolve_min_label(
-        has_excessive_profanity=row["has_excessive_profanity"],
-        has_slur=row["has_slur"],
-        has_targeted_insult=row["has_targeted_insult"],
-        explicit_violence=row["has_threat_or_violence"]
-    )
 
     preprocessed_span: SpanSchema = {
         'span_text': span_text,
         'has_excessive_profanity': row["has_excessive_profanity"],
         'has_slur': row["has_slur"],
         'has_targeted_insult': row["has_targeted_insult"],
-        'min_allowed_label': min_label
+        'min_allowed_label': row["min_allowed_label"]
     }
     
     prompt = build_llm_prompt(preprocessed_span)
     
     return {
         "prompt": prompt,
-        "min_label": min_label
+        "min_label": row["min_allowed_label"]
     }
 
 def finalize_classification(llm_raw_output: str, min_label: str) -> dict:

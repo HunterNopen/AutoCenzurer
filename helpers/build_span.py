@@ -16,22 +16,23 @@ def build_spans(words_df: pd.DataFrame,
     overlap_words: int = OVERLAP_WORDS,
     pause_threshold: float = PAUSE_THRESHOLD) -> pd.DataFrame:
 
-    span_df = pd.DataFrame(columns=[
-        "span_id",
-        "span_text",
-        "start_time",
-        "end_time",
-        "has_excessive_profanity",
-        "has_slur",
-        "has_targeted_insult",
-        "profanity_hits",
-        "slur_hits",
-        "insult_hits",
-        "llm_label",
-        "llm_confidence",
-        "llm_rationale",
-        "final_enforced_label"
-    ])
+    spans = []
+    # span_df = pd.DataFrame(columns=[
+    #     "span_id",
+    #     "span_text",
+    #     "start_time",
+    #     "end_time",
+    #     "has_excessive_profanity",
+    #     "has_slur",
+    #     "has_targeted_insult",
+    #     "profanity_hits",
+    #     "slur_hits",
+    #     "insult_hits",
+    #     "llm_label",
+    #     "llm_confidence",
+    #     "llm_rationale",
+    #     "final_enforced_label"
+    # ])
 
     ### Assuming that words will be grouped by audio_id beforehand and invoked iteratively this if needed
     cursor = 0
@@ -65,10 +66,43 @@ def build_spans(words_df: pd.DataFrame,
             "span_id": span_counter,
             "span_text": ' '.join(span_text),
             "start_time": words_df.iloc[span_start_idx-overlap_words]['start_time'] if span_start_idx - overlap_words > 0 else words_df.iloc[span_start_idx]['start_time'],
-            "end_time": words_df.iloc[spand_end_idx+overlap_words]['end_time'] if spand_end_idx + overlap_words < len_df else words_df.iloc[spand_end_idx]['end_time']
+            "end_time": words_df.iloc[spand_end_idx+overlap_words]['end_time'] if spand_end_idx + overlap_words < len_df else words_df.iloc[spand_end_idx]['end_time'],
+            "has_excessive_profanity": None,
+            "has_slur": None,
+            "has_targeted_insult": None,
+            "has_threat_or_violence": None,
+            "profanity_hits": None,
+            "slur_hits": None,
+            "insult_hits": None,
+            "threat_or_violence_hits": None
         }
-        span_df = pd.concat([span_df, pd.DataFrame([span_row])], ignore_index=True)
+        spans.append(span_row)
         cursor += max(effective_len - overlap_words, 1)
         span_counter += 1
+
+    if not spans:
+        return pd.DataFrame(columns=[
+            'span_id', 'span_text', 'start_time', 'end_time',
+            'has_excessive_profanity', 'has_slur', 'has_targeted_insult', 
+            'has_threat_or_violence', 'profanity_hits', 'slur_hits', 
+            'insult_hits', 'threat_or_violence_hits'
+        ])
+
+    span_df = pd.DataFrame(spans)
+    
+    span_df = span_df.astype({
+        'span_id': 'int64',
+        'span_text': 'object',
+        'start_time': 'float64',
+        'end_time': 'float64',
+        'has_excessive_profanity': 'boolean',
+        'has_slur': 'boolean',
+        'has_targeted_insult': 'boolean',
+        'has_threat_or_violence': 'boolean',
+        'profanity_hits': 'object',
+        'slur_hits': 'object',
+        'insult_hits': 'object',
+        'threat_or_violence_hits': 'object',
+    })
 
     return span_df
