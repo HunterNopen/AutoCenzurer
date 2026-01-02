@@ -149,8 +149,10 @@ def _media_to_audio_path(media_path: str) -> tuple[str, tempfile.TemporaryDirect
     #     raise FileNotFoundError("NO ffmpeg")
     ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
 
-    tmpdir = tempfile.TemporaryDirectory()
-    wav_path = Path(tmpdir.name) / "extracted.wav"
+    # tmpdir = tempfile.TemporaryDirectory()
+    # wav_path = Path(tmpdir.name) / "extracted.wav"
+
+    wav_path = Path("/artifacts") / f"{Path(media_path).stem}_extracted.wav"
 
     cmd = [
         ffmpeg_exe,
@@ -166,10 +168,10 @@ def _media_to_audio_path(media_path: str) -> tuple[str, tempfile.TemporaryDirect
     try:
         subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     except Exception as e:
-        tmpdir.cleanup()
+        #tmpdir.cleanup()
         raise RuntimeError(f"{e.filename}")
 
-    return str(wav_path), tmpdir
+    return str(wav_path), None #tmpdir
 
 def whisperx_to_word_df(
     audio_path: str,
