@@ -10,7 +10,8 @@ from asr.mute_audio import mute_audio
 def main():
     AUDIO_ID = "audio_001"
     AUDIO_PATH = "C:/Users/User/Downloads/hate_videos/hate_videos/hate_video_3.mp4"
-    OUTPUT_PATH = "C:/Users/User/Downloads/hate_videos/hate_videos/hate_video_3_output.mp4"
+    EXTRACTED_WAV_PATH = "C:/python_proj/git/AutoCenzurer/artifacts/hate_video_3_extracted.wav"
+    OUTPUT_PATH = "C:/python_proj/git/AutoCenzurer/artifacts/hate_video_3_output.mp4"
     SPANS_CSV = "artifacts/spans.csv"
     WORDS_CSV = "artifacts/words.csv"   
 
@@ -35,14 +36,11 @@ def main():
     # spans_df = build_spans(words_df)
     # spans_df.to_csv("artifacts/spans_async.csv", index=False)
 
-    spans_df = pd.read_csv(SPANS_CSV)
+    spans_df = pd.read_csv("artifacts/spans_async.csv")
 
     print(f"LOG: Spans saved to {SPANS_CSV}")
 
-    print("3 STEP: Deterministic Signals Analysis !!!PASS MOCK!!!")
-    has_excessive_profanity, has_slur, has_targeted_insult = False, False, False #analyse_signals(spans_df: pd.Dataframe) -> List[bool]
-
-    print("4 STEP: Classifying spans with CALL LLM")
+    print("3+4 STEP: Deterministic Signals Analysis & Classifying spans with LLM API")
 
     ### SYNC WORKING STEP###
     # for idx, row in spans_df.iterrows():
@@ -84,13 +82,12 @@ def main():
         print("  ", i)
         
     mute_audio(
-        audio_path=AUDIO_PATH,
+        audio_path=EXTRACTED_WAV_PATH,
         output_path=OUTPUT_PATH,
         intervals=merged_intervals
     )
 
     print(f"Muted audio written to {OUTPUT_PATH}")
-
 
 if __name__ == "__main__":
     main()
