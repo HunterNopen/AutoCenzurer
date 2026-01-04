@@ -42,6 +42,18 @@ MUST return ONLY valid JSON WITHOUT any artifacts with exact the following struc
 }
 """
 
+### Deterministic signals profanity lists ###
+PROFANITY = {"fuck", "shit", "bitch", "asshole", "dick", "bastard"}
+SLURS = {"nigger", "faggot", "retard", "kike", "chink"}
+INSULTS = {"idiot", "dumbass", "moron", "stupid", "loser"}
+TARGETS = {"you", "your", "he", "she", "they", "this", "that"}
+VIOLENCE_VERBS = {"kill", "murder", "hurt", "harm", "attack", "shoot", "stab", "punch", "beat", "destroy", "rape"}
+THREAT_VERBS = {"will", "gonna", "going", "should", "hope", "wish", "want"}
+THREAT_MODALS = {"should", "would", "could", "might"}
+VIOLENT_OUTCOMES = {"die", "dead", "death", "blood", "pain", "suffer", "suffering"}
+
+CURSE_VOCAB = PROFANITY | SLURS | INSULTS
+
 pipeline = """
 Audio / Video
    -
