@@ -157,11 +157,14 @@ MERGE_GAP = 0.3            # Max gap between merged intervals
 
 ## 🛣️ Roadmap
 
-- [ ] SLM Local Solution
-- [ ] Quantized & Distilled
-- [ ] Static & Real-Time Audio Filtering
-- [ ] Interface UI/UX
-
+- [ ] Generate syntetic dataset with LLM (Ros)
+- [ ] Distilled SLM Local Solution (Rom)
+- [ ] Quantization of SLM (Myk)
+- [ ] Evaluate both approaches (Ros)
+- [ ] Static --& Real-Time Audio Filtering--
+- [ ] Interface UI/UX GRADIO (Myk)
+- [ ] Huggingface deployment (Myk)
+- [ ] Raport (Rom)
 ---
 
 ## 🙏 Have FUN!
