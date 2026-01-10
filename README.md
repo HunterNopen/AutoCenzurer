@@ -69,8 +69,8 @@ AutoCenzurer follows a sophisticated 6-stage pipeline:
 
 AutoCenzurer classifies content into **4 severity levels**: (Hoping GitHub forgives expicit language)
 
-| Label | Description | Examples | Edge case (will be considered label)
-|-------|-------------|----------|
+| Label | Description | Examples | Edge case (will be considered label) |
+|-------|-------------|----------|----------|
 | `NONE` | Clean content | Normal conversation | "just a fucking hard piece of shit job" |
 | `HATE_SPEECH_GENERAL` | Profanity, slurs, targeted insults | "she is a total whore" | "you are such a dumbass for thinking so" |
 | `EXTREMISM_PROMOTION` | Endorsement of mass harm | "nazi were totally right" | "communism is a great concept for humanity" |
@@ -161,7 +161,7 @@ MERGE_GAP = 0.3            # Max gap between merged intervals
 - [ ] Distilled SLM Local Solution (Rom)
 - [ ] Quantization of SLM (Myk)
 - [ ] Evaluate both approaches (Ros)
-- [ ] Static --& Real-Time Audio Filtering--
+- [ ] Static ~~& Real-Time~~ Audio Filtering
 - [ ] Interface UI/UX GRADIO (Myk)
 - [ ] Huggingface deployment (Myk)
 - [ ] Raport (Rom)
