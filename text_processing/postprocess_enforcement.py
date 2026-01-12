@@ -1,7 +1,7 @@
 import json
 import re
 
-from static.config import LABEL_ORDER
+from static.config import LABEL_ORDER, BINARY_LABEL_TO_CLASS_VALUES
 from .preprocessing_span import max_label
 
 def validate_llm_output(raw_output: str) -> dict:
@@ -34,6 +34,36 @@ def validate_llm_output(raw_output: str) -> dict:
 
     return parsed
 
+def validate_llm_output_for_binary(raw_output: str) -> dict:
+    try:
+        cleaned = raw_output.strip()
+        if cleaned.startswith('```'):
+            cleaned = re.sub(r'^```(?:json)?\s*\n?', '', cleaned)
+            cleaned = re.sub(r'\n?```\s*$', '', cleaned)
+
+        cleaned = cleaned.strip()
+        if cleaned.startswith("{{") and cleaned.endswith("}}"):
+            cleaned = cleaned[1:-1]
+        
+        parsed = json.loads(cleaned)
+    except Exception:
+        raise ValueError("Invalid JSON")
+
+    required_keys = {"label", "confidence", "rationale"}
+    if set(parsed.keys()) != required_keys:
+        raise ValueError("Invalid schema")
+
+    if parsed["label"] not in BINARY_LABEL_TO_CLASS_VALUES:
+        raise ValueError("Invalid label")
+
+    if parsed["confidence"] not in {"LOW", "MEDIUM", "HIGH"}:
+        raise ValueError("Invalid confidence")
+
+    if not isinstance(parsed["rationale"], str):
+        raise ValueError("Invalid rationale")
+
+    return parsed
+
 def enforce_final_label(
     llm_output: dict,
     min_allowed_label: str) -> dict:
@@ -52,4 +82,3 @@ def enforce_final_label(
             else llm_output["rationale"] + " | Overridden by deterministic minimum."
         )
     }
-

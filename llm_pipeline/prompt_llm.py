@@ -1,5 +1,6 @@
 from static.config import LLM_BASE_PROMPT_LABEL_SPAN
 from abstraction.span_schema import SpanSchema
+import json
 
 def build_llm_prompt(preprocessed_span: SpanSchema) -> str:
     return f"""
@@ -14,3 +15,25 @@ def build_llm_prompt(preprocessed_span: SpanSchema) -> str:
     "minimum_allowed_label": "{preprocessed_span["min_allowed_label"]}"
     }}
     """
+
+def build_flexible_llm_prompt(preprocessed_span: SpanSchema, system_prompt: str) -> str:
+    span_info = {}
+
+    for key in [
+        "span_text",
+        "has_excessive_profanity",
+        "has_slur",
+        "has_targeted_insult",
+        "min_allowed_label",
+    ]:
+        if not key in preprocessed_span:
+            continue
+        span_info[key] = preprocessed_span[key]
+
+    return f"""
+    {system_prompt}
+    
+    Span Input:
+    {json.dumps(span_info, indent=2)}
+    """
+    
