@@ -18,8 +18,8 @@ from static.config import LLM_PROMPT_BINARY_CLASSIFICATION
 
 def main():
     logger.info("getting data")
-    dataset = get_batched_dataset('binary_classification.csv', batch_size=5)
-    dataset = dataset.take(1)
+    dataset = get_batched_dataset('binary_classification.csv', batch_size=16)
+    logger.info(f"overall batches number: {len(dataset)}")
     
     llm_binary_processor = GroqBinaryProcessor(system_prompt=LLM_PROMPT_BINARY_CLASSIFICATION, max_concurrent=2)
     logger.info("processing data")

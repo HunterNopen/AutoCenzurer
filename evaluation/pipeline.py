@@ -34,8 +34,9 @@ def get_inference_results(
     ) -> Results:
     aggregated_y_true = []
     aggregated_y_pred = []
-    for batch in data_iterator:
+    for i, batch in enumerate(data_iterator):
         try:
+            logger.info(f"Batch {i} processing")
             results = process_batch_fn(Batch(id=batch['id'], span_text=batch['span_text'], label=batch['label']))
         except:
             logging.exception("process batch error")
