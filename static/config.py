@@ -46,6 +46,7 @@ MUST return ONLY valid JSON WITHOUT any artifacts with exact the following struc
 PROFANITY = {"fuck", "shit", "bitch", "asshole", "dick", "bastard"}
 SLURS = {"nigger", "faggot", "retard", "kike", "chink"}
 INSULTS = {"idiot", "dumbass", "moron", "stupid", "loser"}
+
 TARGETS = {"you", "your", "he", "she", "they", "this", "that"}
 VIOLENCE_VERBS = {"kill", "murder", "hurt", "harm", "attack", "shoot", "stab", "punch", "beat", "destroy", "rape"}
 THREAT_VERBS = {"will", "gonna", "going", "should", "hope", "wish", "want"}

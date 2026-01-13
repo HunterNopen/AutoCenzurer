@@ -1,0 +1,72 @@
+{
+  "best_global_step": 200,
+  "best_metric": 0.3429871201515198,
+  "best_model_checkpoint": "./artifacts/qwen-toxic-classifier\\checkpoint-200",
+  "epoch": 1.44043321299639,
+  "eval_steps": 200,
+  "global_step": 200,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 0.36101083032490977,
+      "grad_norm": 23.939451217651367,
+      "learning_rate": 0.00017649880095923262,
+      "loss": 1.5783,
+      "step": 50
+    },
+    {
+      "epoch": 0.7220216606498195,
+      "grad_norm": 71.60820007324219,
+      "learning_rate": 0.0001525179856115108,
+      "loss": 1.0204,
+      "step": 100
+    },
+    {
+      "epoch": 1.0794223826714802,
+      "grad_norm": 3.8193283081054688,
+      "learning_rate": 0.00012853717026378898,
+      "loss": 0.8225,
+      "step": 150
+    },
+    {
+      "epoch": 1.44043321299639,
+      "grad_norm": 38.33003616333008,
+      "learning_rate": 0.00010455635491606715,
+      "loss": 0.7174,
+      "step": 200
+    },
+    {
+      "epoch": 1.44043321299639,
+      "eval_loss": 0.3429871201515198,
+      "eval_macro_f1": 0.7778034446498606,
+      "eval_runtime": 136.7098,
+      "eval_samples_per_second": 32.412,
+      "eval_steps_per_second": 2.026,
+      "eval_weighted_f1": 0.8501238213997535,
+      "step": 200
+    }
+  ],
+  "logging_steps": 50,
+  "max_steps": 417,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 3,
+  "save_steps": 200,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": false
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 2.7240944080257024e+16,
+  "train_batch_size": 16,
+  "trial_name": null,
+  "trial_params": null
+}
