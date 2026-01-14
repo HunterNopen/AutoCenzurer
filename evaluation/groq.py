@@ -3,7 +3,7 @@ from signals_deterministic.determine_span_signals import analyze_span
 from llm_pipeline.prompt_llm import build_flexible_llm_prompt
 from llm_pipeline.async_groq_call_llm import run_groq_batch_concurrently
 from evaluation.pipeline import Results, Batch
-from text_processing.postprocess_enforcement import validate_llm_output_for_binary
+from text_processing.postprocess_enforcement import parse_llm_output
 from static.config import BINARY_LABEL_TO_CLASS_VALUES
 from pandas import DataFrame
 from dataclasses import dataclass, asdict
@@ -38,10 +38,11 @@ class RecordMetadata:
     rationale: str
     
 
-class GroqBinaryProcessor():
-    def __init__(self, system_prompt: str, max_concurrent: int = 2):
+class GroqProcessor():
+    def __init__(self, system_prompt: str, label_to_value_map: dict[str, int], max_concurrent: int = 2):
         self.system_prompt = system_prompt
         self.max_concurrent = max_concurrent
+        self.label_to_value_map = label_to_value_map
         self.metadata = []
 
     def process_batch(self, batch: Batch) -> Results:
@@ -53,7 +54,7 @@ class GroqBinaryProcessor():
         y_true = []
         for i, result in enumerate(raw_results):
             try:
-                parsed = validate_llm_output_for_binary(result)
+                parsed = parse_llm_output(result, self.label_to_value_map)
             except:
                 logger.exception(f"validate output error for id:{batch.id[i]}")
                 self.metadata.append(RecordMetadata(
@@ -68,7 +69,7 @@ class GroqBinaryProcessor():
                 
                 continue
             
-            label_value = BINARY_LABEL_TO_CLASS_VALUES[parsed['label']]
+            label_value = self.label_to_value_map[parsed['label']]
             y_pred.append(label_value)
             y_true.append(batch.label[i])
             
@@ -81,7 +82,7 @@ class GroqBinaryProcessor():
                 confidence=parsed['confidence'],
                 rationale=parsed['rationale']
             ))
-
+        
         return Results(y_true=y_true, y_pred=y_pred)
     
     def export_metadata(self, file_path: str) -> None:

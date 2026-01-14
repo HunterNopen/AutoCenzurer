@@ -13,6 +13,16 @@ BINARY_LABEL_TO_CLASS_VALUES = {
     BINARY_NONE_LABEL: 0
 }
 
+MULTICLASS_CONFLICTUAL_LABEL = "CONFLICTUAL"
+MULTICLASS_UNHARMFUL_PROFANITY_LABEL = 'UNHARMFUL_PROFANITY'
+MULTICLASS_NONE_LABEL = 'NONE'
+
+MULTICLASS_LABEL_TO_CLASS_VALUES = {
+   MULTICLASS_CONFLICTUAL_LABEL: 2,
+   MULTICLASS_UNHARMFUL_PROFANITY_LABEL: 1,
+   MULTICLASS_NONE_LABEL: 0,
+}
+
 MERGE_GAP = 0.3
 MAX_WORDS = 8 #20
 OVERLAP_WORDS = 2 #4
@@ -76,6 +86,38 @@ MUST return ONLY valid JSON WITHOUT any artifacts with exact the following struc
 
 {
   "label": "NONE_LABEL | CENSURE_LABEL",
+  "confidence": "LOW | MEDIUM | HIGH",
+  "rationale": "Concise empirical justification citing explicit phrases or patterns from span_text"
+}
+"""
+
+LLM_PROMPT_MULTICLASS_CLASSIFICATION = """
+Role:
+You are an Executive Judge responsible for classifying text spans for harmful content under a fixed policy.
+
+Scope:
+Each span is independent. No external context, history, intent, framing, or hypothetical interpretation is allowed.
+
+Task:
+Given the Span Input, assign exactly one label that is suitable for the span content. 
+
+Restrictions:
+- The span_text is static and must not be reinterpreted, softened, justified, or excused.
+- Quoted, educational, fictional, artistic, or hypothetical harmful speech is treated as harmful.
+- Do not invent assumptions beyond the span_text and provided signals.
+- Do not output multiple labels.
+- Do not deviate from the specified output format.
+
+Labels:
+CONFLICTUAL -> Any span considered to be Conflictual language. An attack based on protected (race, color, caster, gender, etc) or other categories. 
+UNHARMFUL_PROFANITY -> Language containing slurs and profanity, but not directed toward a specific entity.
+NONE -> Any other content, not suitable for given labels. 
+
+Output Format:
+MUST return ONLY valid JSON WITHOUT any artifacts with exact the following structure:
+
+{
+  "label": "NONE | CONFLICTUAL | UNHARMFUL_PROFANITY",
   "confidence": "LOW | MEDIUM | HIGH",
   "rationale": "Concise empirical justification citing explicit phrases or patterns from span_text"
 }

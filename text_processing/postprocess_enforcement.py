@@ -34,7 +34,7 @@ def validate_llm_output(raw_output: str) -> dict:
 
     return parsed
 
-def validate_llm_output_for_binary(raw_output: str) -> dict:
+def parse_llm_output(raw_output: str, label_to_value_map: dict[str, int]) -> dict:
     try:
         cleaned = raw_output.strip()
         if cleaned.startswith('```'):
@@ -53,7 +53,7 @@ def validate_llm_output_for_binary(raw_output: str) -> dict:
     if set(parsed.keys()) != required_keys:
         raise ValueError("Invalid schema")
 
-    if parsed["label"] not in BINARY_LABEL_TO_CLASS_VALUES:
+    if parsed["label"] not in label_to_value_map:
         raise ValueError("Invalid label")
 
     if parsed["confidence"] not in {"LOW", "MEDIUM", "HIGH"}:
