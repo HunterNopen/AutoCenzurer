@@ -21,7 +21,7 @@ class Results:
     y_true: list[int]
     y_pred: list[int]
 
-def get_batched_dataset(data_path: Path, batch_size: int = 32) -> Dataset:
+def get_batched_dataset(data_path: str, batch_size: int = 32) -> Dataset:
     df = pandas_read_csv(data_path, sep=';')
     dataset = Dataset.from_pandas(df)
     batches = dataset.shuffle(seed=SEED).batch(batch_size)
