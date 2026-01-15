@@ -1,6 +1,6 @@
 # 🎙️ AutoCenzurer
 
-> **Intelligent audio content moderation & POLICY-ENFORCEMENT AI tool** — Automatically detect and mute harmful speech in audio and video files ASR (Automated Speech Recognition) & LLM/SLM
+> **Intelligent audio content moderation & POLICY-ENFORCEMENT AI tool** - Automatically detect and mute harmful speech in audio and video files ASR (Automated Speech Recognition) & LLM/SLM
 
 ---
 
@@ -15,12 +15,12 @@ The system prioritizes **recall** and policy enforcement over contextual nuance.
 
 ### ✨ Key Features
 
-- 🎯 **ASR** — Uses WhisperX for accurate speech-to-text transcription with word-level timestamps
-- 🤖 **AI-Powered Classification** — Combines deterministic pattern matching with LLM intelligence (Gemini, OpenAI, Groq)
-- 📊 **Multi-Level Severity** — Classifies content into severity tiers:  General Hate Speech, Extremism, Harassment
-- ⚡ **Async Processing** — Fast batch processing with concurrent API calls
-- 🔇 **Smart Muting** — Merges nearby harmful segments and applies precise audio muting with padding
-- 🔍 **Transparent Pipeline** — Full visibility into detection signals, LLM reasoning, and final decisions
+- 🎯 **ASR** - Uses WhisperX for accurate speech-to-text transcription with word-level timestamps
+- 🤖 **AI-Powered Classification** - Combines deterministic pattern matching with LLM intelligence (Gemini, OpenAI, Groq)
+- 📊 **Multi-Level Severity** - Classifies content into severity tiers:  General Hate Speech, Extremism, Harassment
+- ⚡ **Async Processing** - Fast batch processing with concurrent API calls
+- 🔇 **Smart Muting** - Merges nearby harmful segments and applies precise audio muting with padding
+- 🔍 **Transparent Pipeline** - Full visibility into detection signals, LLM reasoning, and final decisions
 
 ---
 

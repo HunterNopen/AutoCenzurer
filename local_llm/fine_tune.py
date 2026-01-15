@@ -1,3 +1,5 @@
+import pandas as pd
+import os
 import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, TrainingArguments, Trainer, BitsAndBytesConfig
@@ -85,9 +87,15 @@ if __name__ == '__main__':
 
     ### ================== Dataset Prep ==================
 
+    if not os.path.exists('./artifacts/x_sensitive_val_clean.csv'):
+        df = pd.read_csv("./artifacts/x_sensitive_val.csv", sep = ";")
+        df = df[df['original_index'].dtype == int]
+        df.to_csv('./artifacts/x_sensitive_val_clean.csv', index=False)
+
+    data_files = {"train": "x_sensitive_train_v2.csv", "validation": "x_sensitive_val_clean.csv"}
     dataset = load_dataset(
         "./artifacts",
-        data_files="x_sensitive_train_v2.csv"
+        data_files=data_files
     )
 
     dataset = dataset.map(preprocess)
@@ -107,7 +115,6 @@ if __name__ == '__main__':
         device_map="auto",
         trust_remote_code=True
     )
-
 
     model = prepare_model_for_kbit_training(model)
     model = get_peft_model(model, lora_config)
