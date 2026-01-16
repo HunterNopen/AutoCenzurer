@@ -2,6 +2,7 @@ import os
 from google import genai
 from groq import Groq
 import pandas as pd
+from dotenv import load_dotenv
 
 from llm_pipeline.prepare_promt import finalize_classification, prepare_classification_prompt
 from text_processing.preprocessing_span import resolve_min_label
@@ -11,7 +12,8 @@ from text_processing.postprocess_enforcement import validate_llm_output, enforce
 from .async_groq_call_llm import async_groq_call, run_groq_batch_concurrently, run_semaphore_groq_call
 from signals_deterministic.determine_span_signals import analyze_span
 
-client = genai.Client()
+load_dotenv()
+client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 def call_llm_gemini(prompt: str) -> str:
 

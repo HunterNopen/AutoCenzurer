@@ -3,9 +3,12 @@ import asyncio
 from typing import List
 from groq import AsyncGroq, RateLimitError
 
+RATE_LIMIT_DELAY = 2.5
+
 async def async_groq_call(prompts: List[str]) -> List[str]:
     client = AsyncGroq(
         api_key=os.environ.get("GROQ_API_KEY"),
+        timeout=60.0,
     )
     llm_prompts = [{"role": "system", "content": prompt} for prompt in prompts]
     llm_results_labels = []
@@ -28,9 +31,7 @@ async def async_groq_call(prompts: List[str]) -> List[str]:
 
 async def semaphore_async_groq_call(client: AsyncGroq, prompt: str, semaphore: asyncio.Semaphore) -> str:
     async with semaphore:
-
-        ### Groq API Free Tier Rate Limit Handling ###
-        await asyncio.sleep(60 // (15 // 3)) ### FREE TIER: 15 requests // 3 threads PER minute ###
+        await asyncio.sleep(RATE_LIMIT_DELAY)
 
         try:
             response = await client.chat.completions.create(
@@ -46,9 +47,21 @@ async def semaphore_async_groq_call(client: AsyncGroq, prompt: str, semaphore: a
             return response.choices[0].message.content
         except RateLimitError as e:
             print(f"!!! HIT RATE LIMIT: {e} !!!")
-            raise e
+            await asyncio.sleep(10)
+            try:
+                response = await client.chat.completions.create(
+                    model="llama-3.1-8b-instant",
+                    messages=[{"role": "system", "content": prompt}],
+                    temperature=0.3,
+                    max_tokens=256,
+                    stream=False,
+                    response_format={"type": "json_object"}
+                )
+                return response.choices[0].message.content
+            except Exception as retry_e:
+                raise RuntimeError(f"Rate limit retry failed: {retry_e}") from retry_e
         except Exception as e:
-            raise f"Error: {e}"
+            raise RuntimeError(f"Groq API error: {e}") from e
 
 async def run_semaphore_groq_call(prompts: List[str]) -> List[str]:
     client = AsyncGroq(api_key=os.environ.get("GROQ_API_KEY"))
